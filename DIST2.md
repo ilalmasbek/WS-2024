@@ -33,5 +33,23 @@ switchport nonegotiate
 vtp version 3
 vtp domain ict.ws
 vtp password Skill39!
-vtp mode client
+vtp mode transparent
+```
+```shell
+int vlan 10
+ip address 192.168.10.2 255.255.255.0
+no shut
+standby 10 ip 192.168.10.1
+standby 10 priority 100
+```
+```shell
+int vlan 20
+ip address 192.168.20.2 255.255.255.0
+no shut
+standby 20 ip 192.168.20.1
+standby 20 priority 100
+```
+```shell
+spanning-tree vlan 10 root secondary
+spanning-tree vlan 20 root secondary
 ```
