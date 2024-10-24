@@ -22,3 +22,4 @@ int gi 0/2
 ip address 172.16.10.1 255.255.255.0
 no shut
 ```
+
