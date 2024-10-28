@@ -36,20 +36,13 @@ vtp password Skill39!
 vtp mode transparent
 ```
 ```shell
-int vlan 10
-ip address 192.168.10.2 255.255.255.0
+int vlan 3
+ip address 172.20.3.2 255.255.255.0
 no shut
-standby 10 ip 192.168.10.1
-standby 10 priority 100
+standby 3 ip 172.20.3.1
+standby 3 priority 110
+standby preempt
 ```
 ```shell
-int vlan 20
-ip address 192.168.20.2 255.255.255.0
-no shut
-standby 20 ip 192.168.20.1
-standby 20 priority 100
-```
-```shell
-spanning-tree vlan 10 root secondary
-spanning-tree vlan 20 root secondary
+spanning-tree vlan 3 root secondary
 ```
