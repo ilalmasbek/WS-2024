@@ -49,3 +49,10 @@ permit 172.16.10.0 0.0.0.255
 ip nat inside source list NAT int gi 0/0 overload
 ip nat inside source list NAT1 int gi 0/1 overload
 ```
+```shell
+router bgp 65002
+neighbor 100.10.9.5 remote-as 65000
+neighbor 10.0.10.1 remote-as 65001
+network 100.10.9.4 mask 255.255.255.252
+network 10.0.10.0 mask 255.255.255.252
+```
