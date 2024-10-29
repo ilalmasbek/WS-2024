@@ -42,4 +42,17 @@ int loopback 0
 ip address 8.8.8.8 255.255.255.255
 no shut
 ```
-
+```shell
+router bgp 65000
+neighbor 132.87.2.2 remote-as 65001
+neighbor 100.10.9.6 remote-as 65002
+neighbor 94.121.72.2 remote-as 65003
+neighbor 18.31.192.1 remote-as 65004
+network 132.87.2.0 mask 255.255.255.252
+network 100.10.9.4 mask 255.255.255.252
+network 94.121.72.0 mask 255.255.255.0
+network 18.31.192.0 mask 255.255.255.0
+network 8.8.8.8 mask 255.255.255.255
+network 87.250.250.0 mask 255.255.255.0
+network 100.71.60.252 mask 255.255.255.252
+```
