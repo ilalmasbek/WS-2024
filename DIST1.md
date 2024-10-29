@@ -54,5 +54,5 @@ spanning-tree vlan 3 root primary
 ip routing
 router eigrp 1
 network 172.20.1.0 0.0.0.3
-network 172.20.4.0 0.0.0.255
+network 172.20.3.0 0.0.0.255
 ```
