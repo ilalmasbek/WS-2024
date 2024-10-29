@@ -83,3 +83,25 @@ ip nhrp map multicast dynamic
 no ip next-hop-self eigrp 1
 no ip split-horizon eigrp 1
 ```
+```shell
+crypto isakmp policy 10
+encr aes
+hash sha256
+authentication pre-share
+group 5
+```
+```shell
+crypto isakmp key Skill39! address 0.0.0.0
+```
+```shell
+crypto ipsec transform-set WS2024 esp-aes 256 esp-sha-hmac 
+mode transport
+```
+```shell
+crypto ipsec profile WS2024
+set transform-set WS2024
+```
+```shell
+int tunnel 0
+tunnel protection ipsec profile WS2024 shared
+```
