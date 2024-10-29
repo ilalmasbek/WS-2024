@@ -71,3 +71,25 @@ ip nhrp map multicast 132.87.2.2
 ip nhrp map 192.168.0.1 132.87.2.2
 ip nhrp nhs 192.168.0.1
 ```
+```shell
+crypto isakmp policy 10
+encr aes
+hash sha256
+authentication pre-share
+group 5
+```
+```shell
+crypto isakmp key Skill39! address 0.0.0.0
+```
+```shell
+crypto ipsec transform-set WS2024 esp-aes 256 esp-sha-hmac 
+mode transport
+```
+```shell
+crypto ipsec profile WS2024
+set transform-set WS2024
+```
+```shell
+int tunnel 0
+tunnel protection ipsec profile WS2024 shared
+```
