@@ -51,5 +51,8 @@ standby preempt
 spanning-tree vlan 3 root primary
 ```
 ```shell
-
+ip routing
+router eigrp 1
+network 172.20.1.0 0.0.0.3
+network 172.20.4.0 0.0.0.255
 ```
