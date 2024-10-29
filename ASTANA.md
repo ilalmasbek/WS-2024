@@ -70,3 +70,16 @@ network 132.87.2.0 mask 255.255.255.252
 network 10.0.10.0 mask 255.255.255.252
 network 10.0.20.0 mask 255.255.255.252
 ```
+```shell
+int tunnel 0
+tunnel source gig0/0
+tunnel mode gre multipoint
+ip address 192.168.0.1 255.255.255.0
+no shut
+ip nhrp network-id 1
+tunnel key 123
+ip nhrp authentication ws2024
+ip nhrp map multicast dynamic
+no ip next-hop-self eigrp 1
+no ip split-horizon eigrp 1
+```
