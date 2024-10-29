@@ -58,3 +58,16 @@ router bgp 65004
 neighbor 18.31.192.254 remote-as 65000
 network 18.31.192.0 mask 255.255.255.0
 ```
+```shell
+int tunnel 0
+tunnel source gig0/0
+tunnel mode gre multipoint
+ip address 192.168.0.5 255.255.255.0
+no shut
+ip nhrp network-id 1
+tunnel key 123
+ip nhrp authentication ws2024
+ip nhrp map multicast 132.87.2.2
+ip nhrp map 192.168.0.1 132.87.2.2
+ip nhrp nhs 192.168.0.1
+```
