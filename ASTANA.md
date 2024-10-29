@@ -62,5 +62,11 @@ ip nat inside source list NAT1 int gi 0/1 overload
 ip nat inside source list NAT2 int gi 0/2 overload
 ```
 ```shell
-
+router bgp 65001
+neighbor 132.87.2.1 remote-as 65000
+neighbor 10.0.10.2 remote-as 65002
+neighbor 10.0.20.2 remote-as 65003
+network 132.87.2.0 mask 255.255.255.252
+network 10.0.10.0 mask 255.255.255.252
+network 10.0.20.0 mask 255.255.255.252
 ```
