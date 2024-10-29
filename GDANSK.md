@@ -56,7 +56,19 @@ neighbor 10.0.20.1 remote-as 65001
 network 94.121.72.0 mask 255.255.255.0
 network 10.0.20.0 mask 255.255.255.252
 ```
-
+```shell
+int tunnel 0
+tunnel source gig0/0
+tunnel mode gre multipoint
+ip address 192.168.0.3 255.255.255.0
+no shut
+ip nhrp network-id 1
+tunnel key 123
+ip nhrp authentication ws2024
+ip nhrp map multicast 132.87.2.2
+ip nhrp map 192.168.0.1 132.87.2.2
+ip nhrp nhs 192.168.0.1
+```
 
 
 
