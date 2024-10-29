@@ -53,3 +53,8 @@ router eigrp 1
 network 192.168.0.0 0.0.0.255
 network 172.16.40.0 0.0.0.255
 ```
+```shell
+router bgp 65004
+neighbor 18.31.192.254 remote-as 65000
+network 18.31.192.0 mask 255.255.255.0
+```
