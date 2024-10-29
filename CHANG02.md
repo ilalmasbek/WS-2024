@@ -23,3 +23,33 @@ standby 2 ip 172.16.40.1
 standby 2 priority 110
 standby preempt
 ```
+```shell
+ip sla 1
+icmp-echo 8.8.8.8 source-interface gi 0/0
+frequency 5
+
+ip sla schedule 1 life forever start-time now
+track 1 ip sla 1 reachability
+end
+```
+```shell
+int gi 0/0
+ip nat inside
+int gi 0/1
+ip nat outside
+```
+```shell
+ip route 0.0.0.0 0.0.0.0 18.31.192.254
+```
+```shell
+ip access-list standard NAT
+permit 172.16.40.0 0.0.0.255
+```
+```shell
+ip nat inside source list NAT int gi 0/0 overload
+```
+```shell
+router eigrp 1
+network 192.168.0.0 0.0.0.255
+network 172.16.40.0 0.0.0.255
+```

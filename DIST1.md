@@ -36,31 +36,23 @@ vtp password Skill39!
 vtp mode server
 ```
 ```shell
-vlan 10
-name WS101
-vlan 20
-name WS102
+vlan 3
+name Clients
 ```
 ```shell
-int vlan 10
-ip address 192.168.10.2 255.255.255.0
+int vlan 3
+ip address 172.20.3.2 255.255.255.0
 no shut
-standby 10 ip 192.168.10.1
-standby 10 priority 110
+standby 3 ip 172.20.3.1
+standby 3 priority 110
 standby preempt
 ```
 ```shell
-int vlan 20
-ip address 192.168.20.2 255.255.255.0
-no shut
-standby 20 ip 192.168.20.1
-standby 20 priority 110
-standby preempt
+spanning-tree vlan 3 root primary
 ```
 ```shell
-spanning-tree vlan 10 root primary
-spanning-tree vlan 20 root primary
-```
-```shell
-
+ip routing
+router eigrp 1
+network 172.20.1.0 0.0.0.3
+network 172.20.3.0 0.0.0.255
 ```
