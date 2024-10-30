@@ -34,5 +34,9 @@ show run | sec something
 show ip eigrp neighbors
 ```
 ```shell
+show ip dhcp pool
+show ip dhcp binding
+```
+```shell
 
 ```
