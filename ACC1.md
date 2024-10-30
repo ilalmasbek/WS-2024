@@ -19,3 +19,10 @@ vtp domain ict.ws
 vtp password Skill39!
 vtp mode client
 ```
+```shell
+int ran gi 0/2-3,gi 1/0-3
+switchport mode access
+switchport vlan 3
+spanning-tree portfast
+spanning-tree bpduguard enable
+```
