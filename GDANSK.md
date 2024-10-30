@@ -91,5 +91,11 @@ set transform-set WS2024
 int tunnel 0
 tunnel protection ipsec profile WS2024 shared
 ```
-
+```shell
+ip dhcp pool DHCPPOOL
+network 172.16.20.0 255.255.255.0
+default-gateway 172.16.20.1
+dns-server ...
+domain-name ...
+```
 
