@@ -42,6 +42,7 @@ no shut
 standby 3 ip 172.20.3.1
 standby 3 priority 110
 standby preempt
+ip helper-address 172.20.2.1
 ```
 ```shell
 spanning-tree vlan 3 root secondary
